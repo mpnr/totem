@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feedback xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema.xsd">
+    <comentario>
+        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
+        <valoracion>5</valoracion>
+    </comentario>
+    <comentario>
+        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
+        <valoracion>5</valoracion>
+    </comentario>
+    <comentario>
+        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
+        <valoracion>5</valoracion>
+    </comentario>
+    <comentario>
+        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
+        <valoracion>5</valoracion>
+    </comentario>
+    <comentario>
+        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
+        <valoracion>5</valoracion>
+    </comentario>
+</feedback>
