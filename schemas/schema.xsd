@@ -1,11 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="feedback">
-        <xs:complexType>
+
+  <!-- ENCUESTAS -->
+  <xs:element name="encuestas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="encuesta" maxOccurs="unbounded">
+          <xs:complexType>
+
             <xs:sequence>
-                <xs:element name="comentario" type="xs:string"/>
-                <xs:element name="valoracion" type="xs:integer"/>
+
+              <!-- USUARIO -->
+              <xs:element name="usuario">
+                <xs:complexType>
+                  <xs:sequence>
+
+                    <xs:element name="tipo">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="estudiante"/>
+                          <xs:enumeration value="profesor"/>
+                          <xs:enumeration value="administrativo"/>
+                          <xs:enumeration value="otro"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="frecuencia">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="frecuente"/>
+                          <xs:enumeration value="ocasional"/>
+                          <xs:enumeration value="rara"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- ACCESIBILIDAD -->
+              <xs:element name="accesibilidad">
+                <xs:complexType>
+                  <xs:sequence>
+
+                    <xs:element name="contacto">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="muyfacil"/>
+                          <xs:enumeration value="facil"/>
+                          <xs:enumeration value="normal"/>
+                          <xs:enumeration value="dificil"/>
+                          <xs:enumeration value="muydificil"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- VALORACIÓN -->
+              <xs:element name="valoracion">
+                <xs:complexType>
+                  <xs:sequence>
+
+                    <xs:element name="recomendacion">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="si"/>
+                          <xs:enumeration value="no"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                    <xs:element name="puntuacion">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="1"/>
+                          <xs:maxInclusive value="5"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
             </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+
+            <xs:attribute name="id" type="xs:integer" use="required"/>
+
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
 </xs:schema>
