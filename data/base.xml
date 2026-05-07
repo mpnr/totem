@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feedback xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema.xsd">
-    <comentario>
-        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
-        <valoracion>5</valoracion>
-    </comentario>
-    <comentario>
-        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
-        <valoracion>5</valoracion>
-    </comentario>
-    <comentario>
-        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
-        <valoracion>5</valoracion>
-    </comentario>
-    <comentario>
-        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
-        <valoracion>5</valoracion>
-    </comentario>
-    <comentario>
-        <Nota>Me ha gustado mucho el producto, es de buena calidad y cumple con mis expectativas.</Nota>
-        <valoracion>5</valoracion>
-    </comentario>
-</feedback>
+<encuestas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema.xsd">
+  <encuesta id="1">
+    <usuario>
+      <tipo>estudiante</tipo>
+      <frecuencia>frecuente</frecuencia>
+    </usuario>
+    <accesibilidad>
+      <contacto>facil</contacto>
+    </accesibilidad>
+    <valoracion>
+      <recomendacion>si</recomendacion>
+      <puntuacion>4</puntuacion>
+    </valoracion>
+  </encuesta>
+</encuestas>
