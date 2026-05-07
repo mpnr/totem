@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta Secretaría - IES Aljada</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <h1>IES Aljada</h1>
+      <p>Encuesta de satisfacción · Secretaría</p>
+
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </header>
+
+    <form id="surveyForm">
+
+      <!-- PASO 1 -->
+      <section class="step active">
+
+        <h2>Datos generales</h2>
+
+        <div class="question">
+          <p>Tipo de usuario</p>
+
+          <label>
+            <input type="radio" name="usuario" value="estudiante">
+            Estudiante
+          </label>
+
+          <label>
+            <input type="radio" name="usuario" value="profesor">
+            Profesor/a
+          </label>
+
+          <label>
+            <input type="radio" name="usuario" value="administrativo">
+            Personal administrativo
+          </label>
+
+          <label>
+            <input type="radio" name="usuario" value="otro">
+            Otro
+          </label>
+
+        </div>
+
+        <div class="question">
+
+          <p>Frecuencia de uso</p>
+
+          <label>
+            <input type="radio" name="frecuencia" value="frecuente">
+            Frecuentemente
+          </label>
+
+          <label>
+            <input type="radio" name="frecuencia" value="ocasional">
+            Ocasionalmente
+          </label>
+
+          <label>
+            <input type="radio" name="frecuencia" value="rara">
+            Rara vez
+          </label>
+
+        </div>
+
+        <button type="button" class="next-btn">
+          Siguiente
+        </button>
+
+      </section>
+
+      <!-- PASO 2 -->
+      <section class="step">
+
+        <h2>Accesibilidad</h2>
+
+        <div class="question">
+
+          <p>¿Te resulta fácil contactar con secretaría?</p>
+
+          <label><input type="radio" name="contacto" value="muyfacil">Muy fácil</label>
+          <label><input type="radio" name="contacto" value="facil">Fácil</label>
+          <label><input type="radio" name="contacto" value="normal">Normal</label>
+          <label><input type="radio" name="contacto" value="dificil">Difícil</label>
+          <label><input type="radio" name="contacto" value="muydificil">Muy difícil</label>
+
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="prev-btn">Volver</button>
+          <button type="button" class="next-btn">Siguiente</button>
+        </div>
+
+      </section>
+
+      <!-- PASO 3 -->
+      <section class="step">
+
+        <h2>Valoración final</h2>
+
+        <div class="question">
+
+          <p>¿Recomendarías el servicio?</p>
+
+          <label><input type="radio" name="recomendacion" value="si">Sí</label>
+          <label><input type="radio" name="recomendacion" value="no">No</label>
+
+        </div>
+
+        <div class="question">
+
+          <p>Puntuación general</p>
+
+          <div class="stars">
+
+            <label>
+              <input type="radio" name="puntuacion" value="1">
+              ⭐
+            </label>
+
+            <label>
+              <input type="radio" name="puntuacion" value="2">
+              ⭐⭐
+            </label>
+
+            <label>
+              <input type="radio" name="puntuacion" value="3">
+              ⭐⭐⭐
+            </label>
+
+            <label>
+              <input type="radio" name="puntuacion" value="4">
+              ⭐⭐⭐⭐
+            </label>
+
+            <label>
+              <input type="radio" name="puntuacion" value="5">
+              ⭐⭐⭐⭐⭐
+            </label>
+
+          </div>
+
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="prev-btn">Volver</button>
+          <button type="submit" class="submit-btn">Finalizar</button>
+        </div>
+
+      </section>
+
+      <!-- FINAL -->
+      <section class="step success">
+
+        <h2>¡Gracias!</h2>
+
+        <p>
+          Tu opinión nos ayuda a mejorar el servicio.
+        </p>
+
+      </section>
+
+    </form>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Segoe UI, sans-serif;
+  background:#eef3f8;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:100%;
+  max-width:900px;
+  padding:30px;
+}
+
+.header{
+  margin-bottom:20px;
+}
+
+.header h1{
+  font-size:3rem;
+  color:#003b73;
+}
+
+.header p{
+  color:#5b6770;
+  margin-top:8px;
+}
+
+.progress{
+  width:100%;
+  height:12px;
+  background:#dce5ee;
+  border-radius:30px;
+  margin-top:20px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  width:0%;
+  height:100%;
+  background:#005ea8;
+  transition:.3s;
+}
+
+.step{
+  display:none;
+  background:white;
+  padding:40px;
+  border-radius:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.step.active{
+  display:block;
+}
+
+h2{
+  margin-bottom:30px;
+  color:#003b73;
+}
+
+.question{
+  margin-bottom:30px;
+}
+
+.question p{
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+label{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:#f4f7fb;
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:12px;
+  cursor:pointer;
+  transition:.2s;
+  user-select:none;
+}
+
+label:hover{
+  background:#e6f0fa;
+}
+
+input[type="radio"]{
+  width:22px;
+  height:22px;
+  accent-color:#005ea8;
+}
+
+.buttons{
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
+
+button{
+  border:none;
+  border-radius:14px;
+  padding:18px 35px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.next-btn,
+.submit-btn{
+  background:#005ea8;
+  color:white;
+}
+
+.prev-btn{
+  background:#dbe4ec;
+}
+
+.stars label{
+  justify-content:center;
+  font-size:1.4rem;
+}
+
+.success{
+  text-align:center;
+}
+
+.success h2{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+.success p{
+  font-size:1.3rem;
+}
+
+@media(max-width:768px){
+
+  .container{
+    padding:15px;
+  }
+
+  .step{
+    padding:25px;
+  }
+
+  .header h1{
+    font-size:2rem;
+  }
+
+  label{
+    font-size:1rem;
+  }
+
+}
