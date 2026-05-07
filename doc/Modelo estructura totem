@@ -1,0 +1,388 @@
+Perfecto. Puedes plantearlo como un **tótem digital de instituto**, una pantalla informativa donde el alumnado, familias o profesorado puedan consultar rápidamente qué hacer en **Conserjería**, **Secretaría** y **Jefatura de Estudios**.
+
+La idea sería usar:
+
+* **HTML** → estructura de la página.
+* **CSS** → diseño visual del tótem.
+* **JSON** → datos dinámicos principales.
+* **XML** → datos alternativos o complementarios para demostrar uso de lenguaje de marcas.
+
+---
+
+## 1. Estructura del proyecto
+
+Crea una carpeta llamada, por ejemplo:
+
+```text
+totem_instituto/
+│
+├── index.html
+├── estilos.css
+├── script.js
+├── datos.json
+└── datos.xml
+```
+
+---
+
+# 2. Archivo `datos.json`
+
+Aquí guardamos la información principal del tótem.
+
+```json
+{
+  "instituto": "IES Ejemplo",
+  "servicios": [
+    {
+      "id": "conserjeria",
+      "nombre": "Conserjería",
+      "icono": "🔔",
+      "descripcion": "Servicio de atención inicial del centro.",
+      "horario": "De lunes a viernes, de 8:00 a 14:30",
+      "funciones": [
+        "Información general del centro",
+        "Entrega y recogida de llaves",
+        "Control de entradas y salidas",
+        "Atención a llamadas telefónicas",
+        "Apoyo en fotocopias y material"
+      ]
+    },
+    {
+      "id": "secretaria",
+      "nombre": "Secretaría",
+      "icono": "📄",
+      "descripcion": "Servicio administrativo del instituto.",
+      "horario": "De lunes a viernes, de 9:00 a 13:30",
+      "funciones": [
+        "Matrículas",
+        "Certificados académicos",
+        "Solicitud de títulos",
+        "Becas y ayudas",
+        "Gestión de documentación oficial"
+      ]
+    },
+    {
+      "id": "jefatura",
+      "nombre": "Jefatura de Estudios",
+      "icono": "🎓",
+      "descripcion": "Servicio encargado de la organización académica y convivencia.",
+      "horario": "Consultar cita previa",
+      "funciones": [
+        "Justificación de faltas",
+        "Organización de horarios",
+        "Atención a problemas de convivencia",
+        "Comunicación con tutores",
+        "Gestión de incidencias académicas"
+      ]
+    }
+  ]
+}
+```
+
+---
+
+# 3. Archivo `datos.xml`
+
+Este archivo sirve para demostrar que también trabajas con XML.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<instituto nombre="IES Ejemplo">
+    <servicio id="conserjeria">
+        <nombre>Conserjería</nombre>
+        <ubicacion>Entrada principal</ubicacion>
+        <responsable>Personal de conserjería</responsable>
+    </servicio>
+
+    <servicio id="secretaria">
+        <nombre>Secretaría</nombre>
+        <ubicacion>Planta baja, junto a dirección</ubicacion>
+        <responsable>Personal administrativo</responsable>
+    </servicio>
+
+    <servicio id="jefatura">
+        <nombre>Jefatura de Estudios</nombre>
+        <ubicacion>Zona de despachos</ubicacion>
+        <responsable>Jefatura de Estudios</responsable>
+    </servicio>
+</instituto>
+```
+
+---
+
+# 4. Archivo `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tótem Informativo del Instituto</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tótem Informativo</h1>
+        <h2 id="nombreInstituto">Instituto</h2>
+        <p>Conserjería · Secretaría · Jefatura de Estudios</p>
+    </header>
+
+    <main>
+        <section class="menu-servicios">
+            <button onclick="mostrarServicio('conserjeria')">🔔 Conserjería</button>
+            <button onclick="mostrarServicio('secretaria')">📄 Secretaría</button>
+            <button onclick="mostrarServicio('jefatura')">🎓 Jefatura de Estudios</button>
+        </section>
+
+        <section id="contenidoServicio" class="tarjeta">
+            <h2>Bienvenido/a</h2>
+            <p>Selecciona un servicio para consultar su información.</p>
+        </section>
+
+        <section class="info-extra">
+            <h2>Ubicación de los servicios</h2>
+            <div id="datosXml"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto realizado con HTML, CSS, JSON y XML</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+# 5. Archivo `estilos.css`
+
+```css
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    color: #ffffff;
+}
+
+header {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 30px;
+    margin: 10px 0;
+    color: #f1fa8c;
+}
+
+header p {
+    font-size: 20px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.menu-servicios {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.menu-servicios button {
+    font-size: 22px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 18px;
+    background-color: #f1faee;
+    color: #1d3557;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #a8dadc;
+    transition: 0.2s;
+}
+
+.menu-servicios button:hover {
+    transform: translateY(-4px);
+    background-color: #ffdd57;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    color: #1d3557;
+    padding: 35px;
+    border-radius: 25px;
+    min-height: 280px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.tarjeta h2 {
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.tarjeta p {
+    font-size: 20px;
+}
+
+.tarjeta ul {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.horario {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #e63946;
+    color: white;
+    border-radius: 12px;
+    margin: 10px 0 20px;
+}
+
+.info-extra {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.info-extra h2 {
+    text-align: center;
+}
+
+.bloque-xml {
+    background-color: #f1faee;
+    color: #1d3557;
+    padding: 15px;
+    border-radius: 14px;
+    margin: 12px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+```
+
+---
+
+# 6. Archivo `script.js`
+
+```javascript
+let servicios = [];
+
+// Cargar datos desde JSON
+fetch("datos.json")
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+        document.getElementById("nombreInstituto").textContent = datos.instituto;
+        servicios = datos.servicios;
+    })
+    .catch(error => {
+        console.error("Error al cargar el JSON:", error);
+    });
+
+// Mostrar un servicio concreto
+function mostrarServicio(idServicio) {
+    const servicio = servicios.find(item => item.id === idServicio);
+
+    if (!servicio) {
+        document.getElementById("contenidoServicio").innerHTML = `
+            <h2>Error</h2>
+            <p>No se ha encontrado el servicio solicitado.</p>
+        `;
+        return;
+    }
+
+    let listaFunciones = "";
+
+    servicio.funciones.forEach(funcion => {
+        listaFunciones += `<li>${funcion}</li>`;
+    });
+
+    document.getElementById("contenidoServicio").innerHTML = `
+        <h2>${servicio.icono} ${servicio.nombre}</h2>
+        <p>${servicio.descripcion}</p>
+        <p class="horario">${servicio.horario}</p>
+
+        <h3>Funciones principales</h3>
+        <ul>
+            ${listaFunciones}
+        </ul>
+    `;
+}
+
+// Cargar datos desde XML
+fetch("datos.xml")
+    .then(respuesta => respuesta.text())
+    .then(textoXml => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(textoXml, "application/xml");
+
+        const serviciosXml = xml.getElementsByTagName("servicio");
+        let contenido = "";
+
+        for (let i = 0; i < serviciosXml.length; i++) {
+            const nombre = serviciosXml[i].getElementsByTagName("nombre")[0].textContent;
+            const ubicacion = serviciosXml[i].getElementsByTagName("ubicacion")[0].textContent;
+            const responsable = serviciosXml[i].getElementsByTagName("responsable")[0].textContent;
+
+            contenido += `
+                <div class="bloque-xml">
+                    <h3>${nombre}</h3>
+                    <p><strong>Ubicación:</strong> ${ubicacion}</p>
+                    <p><strong>Responsable:</strong> ${responsable}</p>
+                </div>
+            `;
+        }
+
+        document.getElementById("datosXml").innerHTML = contenido;
+    })
+    .catch(error => {
+        console.error("Error al cargar el XML:", error);
+    });
+```
+
+---
+
+# 7. Cómo explicarlo en clase
+
+Puedes decir algo así:
+
+> Este proyecto consiste en un tótem informativo para un instituto. La página permite consultar tres servicios fundamentales: Conserjería, Secretaría y Jefatura de Estudios.
+>
+> He utilizado HTML para crear la estructura, CSS para el diseño visual, JSON para almacenar la información principal de cada servicio y XML para guardar datos complementarios como ubicación y responsable.
+>
+> Mediante JavaScript, la página carga los datos desde los archivos externos y los muestra dinámicamente cuando el usuario pulsa cada botón.
+
+---
+
+# 8. Importante para que funcione
+
+Si abres directamente el archivo `index.html` haciendo doble clic, puede que algunos navegadores bloqueen la carga de JSON y XML.
+
+Lo más limpio es abrirlo con **Live Server** en Visual Studio Code:
+
+1. Abre la carpeta del proyecto en VS Code.
+2. Instala la extensión **Live Server**.
+3. Haz clic derecho sobre `index.html`.
+4. Pulsa **Open with Live Server**.
+
+Y ya tendrás el tótem funcionando, con su pequeño cerebro JSON, su pergamino XML y su fachada HTML. 🧭
