@@ -4,7 +4,7 @@
   <encuesta id="1">
 
     <usuario>
-      <tipo></tipo>
+      <tipo/>
       <frecuencia>frecuente</frecuencia>
     </usuario>
 
@@ -34,4 +34,4 @@
 
   </encuesta>
 
-</encuestas>
+<encuesta id="2"><usuario><tipo>estudiante</tipo><frecuencia>rara</frecuencia></usuario><accesibilidad><contacto>dificil</contacto><canal>web</canal></accesibilidad><tiempo><espera>adecuado</espera><resolucion>parcialmente</resolucion></tiempo><calidad><trato>bueno</trato><ayuda>siempre</ayuda><claridad>pococlara</claridad></calidad><valoracion><problema>parcial</problema><general>excelente</general><recomendacion>si</recomendacion><puntuacion>3</puntuacion><sentimiento>neutral</sentimiento></valoracion></encuesta></encuestas>

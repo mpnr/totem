@@ -22,161 +22,236 @@
       </div>
     </header>
 
-    <form id="surveyForm">
+    <form id="surveyForm" action="../docs/procesar_encuesta.php" method="POST">
 
-      <!-- PASO 1 -->
-      <section class="step active">
+  <!-- PASO 1 -->
+  <section class="step active">
 
-        <h2>Datos generales</h2>
+    <h2>Datos generales</h2>
 
-        <div class="question">
-          <p>Tipo de usuario</p>
+    <div class="question">
 
-          <label>
-            <input type="radio" name="usuario" value="estudiante">
-            Estudiante
-          </label>
+      <p>Tipo de usuario</p>
 
-          <label>
-            <input type="radio" name="usuario" value="profesor">
-            Profesor/a
-          </label>
+      <label><input type="radio" name="usuario" value="estudiante">Estudiante</label>
+      <label><input type="radio" name="usuario" value="profesor">Profesor/a</label>
+      <label><input type="radio" name="usuario" value="administrativo">Personal administrativo</label>
+      <label><input type="radio" name="usuario" value="otro">Otro</label>
 
-          <label>
-            <input type="radio" name="usuario" value="administrativo">
-            Personal administrativo
-          </label>
+    </div>
 
-          <label>
-            <input type="radio" name="usuario" value="otro">
-            Otro
-          </label>
+    <div class="question">
 
-        </div>
+      <p>Frecuencia con la que utilizas la secretaría</p>
 
-        <div class="question">
+      <label><input type="radio" name="frecuencia" value="frecuente">Frecuentemente</label>
+      <label><input type="radio" name="frecuencia" value="ocasional">Ocasionalmente</label>
+      <label><input type="radio" name="frecuencia" value="rara">Rara vez</label>
 
-          <p>Frecuencia de uso</p>
+    </div>
 
-          <label>
-            <input type="radio" name="frecuencia" value="frecuente">
-            Frecuentemente
-          </label>
+    <button type="button" class="next-btn">Siguiente</button>
 
-          <label>
-            <input type="radio" name="frecuencia" value="ocasional">
-            Ocasionalmente
-          </label>
+  </section>
 
-          <label>
-            <input type="radio" name="frecuencia" value="rara">
-            Rara vez
-          </label>
+  <!-- PASO 2 -->
+  <section class="step">
 
-        </div>
+    <h2>Accesibilidad</h2>
 
-        <button type="button" class="next-btn">
-          Siguiente
-        </button>
+    <div class="question">
 
-      </section>
+      <p>¿Te resulta fácil contactar con la secretaría?</p>
 
-      <!-- PASO 2 -->
-      <section class="step">
+      <label><input type="radio" name="contacto" value="muyfacil">Muy fácil</label>
+      <label><input type="radio" name="contacto" value="facil">Fácil</label>
+      <label><input type="radio" name="contacto" value="normal">Normal</label>
+      <label><input type="radio" name="contacto" value="dificil">Difícil</label>
+      <label><input type="radio" name="contacto" value="muydificil">Muy difícil</label>
 
-        <h2>Accesibilidad</h2>
+    </div>
 
-        <div class="question">
+    <div class="question">
 
-          <p>¿Te resulta fácil contactar con secretaría?</p>
+      <p>¿Qué canal utilizas principalmente?</p>
 
-          <label><input type="radio" name="contacto" value="muyfacil">Muy fácil</label>
-          <label><input type="radio" name="contacto" value="facil">Fácil</label>
-          <label><input type="radio" name="contacto" value="normal">Normal</label>
-          <label><input type="radio" name="contacto" value="dificil">Difícil</label>
-          <label><input type="radio" name="contacto" value="muydificil">Muy difícil</label>
+      <label><input type="radio" name="canal" value="presencial">Presencial</label>
+      <label><input type="radio" name="canal" value="telefono">Teléfono</label>
+      <label><input type="radio" name="canal" value="correo">Correo electrónico</label>
+      <label><input type="radio" name="canal" value="web">Página web</label>
+      <label><input type="radio" name="canal" value="otro">Otro</label>
 
-        </div>
+    </div>
 
-        <div class="buttons">
-          <button type="button" class="prev-btn">Volver</button>
-          <button type="button" class="next-btn">Siguiente</button>
-        </div>
+    <div class="buttons">
+      <button type="button" class="prev-btn">Volver</button>
+      <button type="button" class="next-btn">Siguiente</button>
+    </div>
 
-      </section>
+  </section>
 
-      <!-- PASO 3 -->
-      <section class="step">
+  <!-- PASO 3 -->
+  <section class="step">
 
-        <h2>Valoración final</h2>
+    <h2>Tiempo de atención</h2>
 
-        <div class="question">
+    <div class="question">
 
-          <p>¿Recomendarías el servicio?</p>
+      <p>¿Cómo valoras el tiempo de espera?</p>
 
-          <label><input type="radio" name="recomendacion" value="si">Sí</label>
-          <label><input type="radio" name="recomendacion" value="no">No</label>
+      <label><input type="radio" name="espera" value="muycorto">Muy corto</label>
+      <label><input type="radio" name="espera" value="adecuado">Adecuado</label>
+      <label><input type="radio" name="espera" value="largo">Largo</label>
+      <label><input type="radio" name="espera" value="muylargo">Muy largo</label>
 
-        </div>
+    </div>
 
-        <div class="question">
+    <div class="question">
 
-          <p>Puntuación general</p>
+      <p>¿Se resolvió tu consulta en un tiempo razonable?</p>
 
-          <div class="stars">
+      <label><input type="radio" name="resolucion_tiempo" value="si">Sí</label>
+      <label><input type="radio" name="resolucion_tiempo" value="no">No</label>
+      <label><input type="radio" name="resolucion_tiempo" value="parcialmente">Parcialmente</label>
 
-            <label>
-              <input type="radio" name="puntuacion" value="1">
-              ⭐
-            </label>
+    </div>
 
-            <label>
-              <input type="radio" name="puntuacion" value="2">
-              ⭐⭐
-            </label>
+    <div class="buttons">
+      <button type="button" class="prev-btn">Volver</button>
+      <button type="button" class="next-btn">Siguiente</button>
+    </div>
 
-            <label>
-              <input type="radio" name="puntuacion" value="3">
-              ⭐⭐⭐
-            </label>
+  </section>
 
-            <label>
-              <input type="radio" name="puntuacion" value="4">
-              ⭐⭐⭐⭐
-            </label>
+  <!-- PASO 4 -->
+  <section class="step">
 
-            <label>
-              <input type="radio" name="puntuacion" value="5">
-              ⭐⭐⭐⭐⭐
-            </label>
+    <h2>Calidad de atención</h2>
 
-          </div>
+    <div class="question">
 
-        </div>
+      <p>¿Cómo valorarías el trato recibido?</p>
 
-        <div class="buttons">
-          <button type="button" class="prev-btn">Volver</button>
-          <button type="submit" class="submit-btn">Finalizar</button>
-        </div>
+      <label><input type="radio" name="trato" value="excelente">Excelente</label>
+      <label><input type="radio" name="trato" value="bueno">Bueno</label>
+      <label><input type="radio" name="trato" value="regular">Regular</label>
+      <label><input type="radio" name="trato" value="malo">Malo</label>
 
-      </section>
+    </div>
 
-      <!-- FINAL -->
-      <section class="step success">
+    <div class="question">
 
-        <h2>¡Gracias!</h2>
+      <p>¿El personal mostró disposición para ayudarte?</p>
 
-        <p>
-          Tu opinión nos ayuda a mejorar el servicio.
-        </p>
+      <label><input type="radio" name="ayuda" value="siempre">Siempre</label>
+      <label><input type="radio" name="ayuda" value="casisiempre">Casi siempre</label>
+      <label><input type="radio" name="ayuda" value="aveces">A veces</label>
+      <label><input type="radio" name="ayuda" value="nunca">Nunca</label>
 
-      </section>
+    </div>
 
-    </form>
+    <div class="question">
+
+      <p>¿La información fue clara?</p>
+
+      <label><input type="radio" name="claridad" value="muyclara">Muy clara</label>
+      <label><input type="radio" name="claridad" value="clara">Clara</label>
+      <label><input type="radio" name="claridad" value="pococlara">Poco clara</label>
+      <label><input type="radio" name="claridad" value="nadaclara">Nada clara</label>
+
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="prev-btn">Volver</button>
+      <button type="button" class="next-btn">Siguiente</button>
+    </div>
+
+  </section>
+
+  <!-- PASO 5 -->
+  <section class="step">
+
+    <h2>Valoración global</h2>
+
+    <div class="question">
+
+      <p>¿Tu problema fue resuelto?</p>
+
+      <label><input type="radio" name="problema" value="completo">Sí completamente</label>
+      <label><input type="radio" name="problema" value="parcial">Sí parcialmente</label>
+      <label><input type="radio" name="problema" value="no">No</label>
+
+    </div>
+
+    <div class="question">
+
+      <p>Valoración general del servicio</p>
+
+      <label><input type="radio" name="valoracion" value="excelente">Excelente</label>
+      <label><input type="radio" name="valoracion" value="bueno">Bueno</label>
+      <label><input type="radio" name="valoracion" value="regular">Regular</label>
+      <label><input type="radio" name="valoracion" value="malo">Malo</label>
+
+    </div>
+
+    <div class="question">
+
+      <p>¿Recomendarías este servicio?</p>
+
+      <label><input type="radio" name="recomendacion" value="si">Sí</label>
+      <label><input type="radio" name="recomendacion" value="no">No</label>
+
+    </div>
+
+    <div class="question">
+
+      <p>Puntuación general</p>
+
+      <div class="stars">
+
+        <label><input type="radio" name="puntuacion" value="1">⭐</label>
+        <label><input type="radio" name="puntuacion" value="2">⭐⭐</label>
+        <label><input type="radio" name="puntuacion" value="3">⭐⭐⭐</label>
+        <label><input type="radio" name="puntuacion" value="4">⭐⭐⭐⭐</label>
+        <label><input type="radio" name="puntuacion" value="5">⭐⭐⭐⭐⭐</label>
+
+      </div>
+
+    </div>
+
+    <div class="question">
+
+      <p>¿Cómo te sentiste con el trato recibido?</p>
+
+      <label><input type="radio" name="sentimiento" value="muyinsatisfecho">😡 Muy insatisfecho/a</label>
+      <label><input type="radio" name="sentimiento" value="insatisfecho">😕 Insatisfecho/a</label>
+      <label><input type="radio" name="sentimiento" value="neutral">😐 Neutral</label>
+      <label><input type="radio" name="sentimiento" value="satisfecho">🙂 Satisfecho/a</label>
+      <label><input type="radio" name="sentimiento" value="muysatisfecho">😄 Muy satisfecho/a</label>
+
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="prev-btn">Volver</button>
+      <button type="submit" class="submit-btn">Finalizar</button>
+    </div>
+
+  </section>
+
+  <!-- FINAL -->
+  <section class="step success">
+
+    <h2>¡Gracias!</h2>
+
+    <p>Tu opinión nos ayuda a mejorar el servicio.</p>
+
+  </section>
+
+</form>
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 
 </body>
 
