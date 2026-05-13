@@ -27,9 +27,17 @@ nextBtns.forEach(button => {
 
   button.addEventListener("click", () => {
 
-    if(currentStep < steps.length - 1){
+    if(currentStep < steps.length - 2){
+
       currentStep++;
+
       updateSteps();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
     }
 
   });
@@ -41,17 +49,22 @@ prevBtns.forEach(button => {
   button.addEventListener("click", () => {
 
     if(currentStep > 0){
+
       currentStep--;
+
       updateSteps();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
     }
 
   });
 
 });
-
-document.getElementById("surveyForm").addEventListener("submit", (e) => {
-
-  e.preventDefault();
+document.getElementById("surveyForm").addEventListener("submit", () => {
 
   currentStep++;
 
