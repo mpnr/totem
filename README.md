@@ -11,5 +11,6 @@ María Pilar Nicolás Rodríguez    Data Manager
 Tecnologías: HTML5/CSS3 + validación XSD para datos XML. GitHub Pages
 
 Instrucciones:
-enlace
+enlace:
 https://mpnr.github.io/totem/src/index.html
+
